@@ -1,0 +1,517 @@
+body {
+    font-size: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+#title_page {
+    height: 950px;
+    width: 100vw;
+    background: url('../images/background1.gif') center center no-repeat;
+    background-size: cover;
+    font-size: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ticket {
+    background: url('../images/ticket_bg.jpg') center center no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 450px;
+    border: 5px solid white;
+    position: absolute;
+    transition-duration: .5s;
+}
+
+.ticket input {
+    background: transparent;
+    border: none;
+    color: red;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 700;
+    position: absolute;
+    width: 300px;
+    top: 210px;
+    left: 80px;
+    box-shadow: none;
+}
+
+.ticket input:focus {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+.ticket.ticket1 {
+    top: 5%;
+    left: 5%;
+    transform: rotate(-20deg);
+}
+
+.ticket.ticket2 {
+    top: 8%;
+    left: 15%;
+    transform: rotate(-15deg);
+}
+
+.ticket.ticket1:hover, .ticket.ticket2:hover {
+    top: 5%;
+    left: 9%;
+    transform: rotate(-5deg) scale(1.25);
+    z-index: 1;
+    box-shadow: 5px 5px 80px 20px white;
+}
+
+.ticket.ticket2:hover {
+    left: 19%;
+}
+
+.ticket input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: red;
+}
+
+.ticket input::-moz-placeholder { /* Firefox 19+ */
+    color: red;
+}
+
+.ticket input:-ms-input-placeholder { /* IE 10+ */
+    color: red;
+}
+
+#title {
+    position: absolute;
+    bottom: 13%;
+    left: 3%;
+    background-color: rgba(0, 0, 0, .8);
+    animation: bounce 2s infinite;
+    transform: rotate(10deg);
+    padding: 0 50px 0 30px;
+}
+
+#title h1 {
+    font-size: 120px;
+    font-style: italic;
+    font-weight: 900;
+    color: red;
+    text-decoration: underline;
+    text-decoration-color: orangered;
+}
+
+@-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        bottom: 13%;
+    }
+    40% {
+        bottom: 17%;
+    }
+    60% {
+        bottom: 15%;
+    }
+}
+
+.board_size_select {
+    line-height: 80px;
+    text-align: center;
+    font-size: 40px;
+    position: absolute;
+    height: 80px;
+    width: 400px;
+    color: red;
+    font-weight: bolder;
+    font-style: italic;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 80px;
+    transition-duration: .5s;
+    border: 5px red solid;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.board_size_select.rookie {
+    right: 250px;
+    top: 50px;
+}
+
+.board_size_select.pro {
+    right: 150px;
+    top: 200px;
+}
+
+.board_size_select.superstar {
+    right: 50px;
+    top: 350px;
+}
+
+.board_size_select:hover {
+    background-color: rgba(255, 255, 255, 1);
+    animation: flash .5s infinite;
+}
+
+@-webkit-keyframes flash {
+    50% {
+        background-color: rgba(255, 255, 255, .5);
+        box-shadow: none;
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 0 0 50px 10px white;
+    }
+}
+
+#start {
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    background: url('../images/start_bg.jpg') center center no-repeat;
+    background-size: cover;
+    border: 80px solid black;
+    position: absolute;
+    bottom: 50px;
+    right: 8%;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 140px;
+    padding-left: 15px;
+    text-shadow: 3px 3px 10px black;
+    transition: transform 5s;
+    color: white;
+    cursor: pointer;
+}
+
+#start:hover {
+    transform: rotate(10800deg);
+    transition: transform 20s;
+}
+
+@media only screen and (max-width: 1600px) {
+    #title h1 {
+        font-size: 80px;
+    }
+
+    #start {
+        height: 280px;
+        width: 280px;
+        border: 60px solid black;
+        font-size: 25px;
+        line-height: 120px;
+        padding-left: 15px;
+    }
+
+    .board_size_select {
+        line-height: 60px;
+        font-size: 30px;
+        height: 60px;
+        width: 300px;
+        border-radius: 60px;
+        border: 4px red solid;
+    }
+
+    .board_size_select.rookie {
+        right: 225px;
+        top: 50px;
+    }
+
+    .board_size_select.pro {
+        right: 150px;
+        top: 150px;
+    }
+
+    .board_size_select.superstar {
+        right: 75px;
+        top: 250px;
+    }
+
+    .ticket {
+        height: 225px;
+        width: 337px;
+        border: 3px solid white;
+    }
+
+    .ticket input {
+        font-size: 20px;
+        top: 155px;
+        left: 60px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #title h1 {
+        font-size: 60px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .board_size_select.rookie {
+        right: 150px;
+        top: 50px;
+    }
+
+    .board_size_select.pro {
+        right: 100px;
+        top: 125px;
+    }
+
+    .board_size_select.superstar {
+        right: 50px;
+        top: 200px;
+    }
+
+    #start {
+        right: 90px;
+        bottom: 250px;
+    }
+
+    .ticket.ticket2 {
+        top: 28%;
+        left: 3%;
+    }
+
+    .ticket.ticket2:hover {
+        left: 7%;
+        top: 22%;
+    }
+}
+
+@media only screen and (max-width: 726px) {
+    .board_size_select {
+        line-height: 40px;
+        font-size: 25px;
+        height: 40px;
+        width: 250px;
+        border-radius: 40px;
+        border: 3px red solid;
+    }
+
+    .board_size_select.rookie {
+        right: 75px;
+        top: 50px;
+    }
+
+    .board_size_select.pro {
+        right: 50px;
+        top: 110px;
+    }
+
+    .board_size_select.superstar {
+        right: 25px;
+        top: 170px;
+    }
+
+    #start {
+        right: 50px;
+        bottom: 200px;
+    }
+
+    .ticket.ticket2 {
+        top: 5%;
+        left: -11%;
+    }
+
+    .ticket.ticket2:hover {
+        left: -5%;
+        top: 10%;
+    }
+
+    .ticket.ticket1 {
+        top: 15%;
+        left: -12%;
+    }
+
+    .ticket.ticket1:hover {
+        left: -5%;
+        top: 20%;
+    }
+
+    #title h1 {
+        font-size: 38px;
+    }
+
+    #title_page {
+        height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .board_size_select {
+        line-height: 30px;
+        font-size: 16px;
+        height: 30px;
+        width: 175px;
+        border-radius: 30px;
+        border: 2px red solid;
+    }
+
+    .board_size_select.rookie {
+        right: 30px;
+        top: 20px;
+    }
+
+    .board_size_select.pro {
+        right: 20px;
+        top: 60px;
+    }
+
+    .board_size_select.superstar {
+        right: 10px;
+        top: 100px;
+    }
+
+    .ticket {
+        height: 169px;
+        width: 253px;
+        border: 2px solid white;
+    }
+
+    .ticket input {
+        font-size: 16px;
+        top: 108px;
+        left: 40px;
+    }
+}
+
+.ticket.ticket2 {
+    top: 5%;
+    left: -11%;
+}
+
+.ticket.ticket2:hover {
+    left: -5%;
+    top: 10%;
+}
+
+.ticket.ticket1 {
+    top: 15%;
+    left: -12%;
+}
+
+.ticket.ticket1:hover {
+    left: -5%;
+    top: 20%;
+}
+
+#title h1 {
+    font-size: 32px;
+}
+
+#start {
+    height: 200px;
+    width: 200px;
+    border: 40px solid black;
+    font-size: 20px;
+    line-height: 110px;
+    padding-left: 5px;
+    right: 10px;
+    bottom: 180px;
+}
+
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (orientation: landscape) {
+
+    .board_size_select.rookie {
+        right: 20px;
+        top: 5px;
+    }
+
+    .board_size_select.pro {
+        right: 12px;
+        top: 50px;
+    }
+
+    .board_size_select.superstar {
+        right: 7px;
+        top: 95px;
+    }
+
+    .ticket.ticket2 {
+        top: -8%;
+        left: -11%;
+    }
+
+    .ticket.ticket2:hover {
+        left: -5%;
+        top: 0;
+    }
+
+    .ticket.ticket1 {
+        top: 6%;
+        left: 0;
+    }
+
+    .ticket.ticket1:hover {
+        left: -5%;
+        top: 10%;
+    }
+
+    #title h1 {
+        font-size: 32px;
+    }
+
+    #start {
+        bottom: 10px;
+    }
+}
+
+
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (orientation: landscape) {
+    .board_size_select {
+        line-height: 40px;
+        font-size: 20px;
+        height: 40px;
+        width: 200px;
+        border-radius: 40px;
+        border: 2px red solid;
+    }
+    .board_size_select.rookie {
+        right: 50px;
+        top: 5px;
+    }
+
+    .board_size_select.pro {
+        right: 30px;
+        top: 60px;
+    }
+
+    .board_size_select.superstar {
+        right: 10px;
+        top: 115px;
+    }
+
+    .ticket.ticket2 {
+        top: -8%;
+        left: -11%;
+    }
+
+    .ticket.ticket2:hover {
+        left: -5%;
+        top: 0;
+    }
+
+    .ticket.ticket1 {
+        top: 6%;
+        left: 0;
+    }
+
+    .ticket.ticket1:hover {
+        left: -5%;
+        top: 10%;
+    }
+
+    #title h1 {
+        font-size: 32px;
+    }
+
+    #start {
+        bottom: 10px;
+    }
+    #title_page {
+        height: 100vh;
+    }
+}
