@@ -3,7 +3,6 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     overflow-x: hidden;
 }
-
 #title_page {
     height: 950px;
     width: 100vw;
@@ -12,7 +11,12 @@ body {
     font-size: 50px;
     position: relative;
     overflow: hidden;
+    transition:transform 5s;
+    border: 10px solid black;
+    box-shadow: 0 0 100px 20px black;
+    z-index: 1;
 }
+
 
 .ticket {
     background: url('../images/ticket_bg.jpg') center center no-repeat;
@@ -369,44 +373,42 @@ body {
         top: 108px;
         left: 40px;
     }
+
+    .ticket.ticket2 {
+        top: 5%;
+        left: -11%;
+    }
+
+    .ticket.ticket2:hover {
+        left: -5%;
+        top: 10%;
+    }
+
+    .ticket.ticket1 {
+        top: 15%;
+        left: -12%;
+    }
+
+    .ticket.ticket1:hover {
+        left: -5%;
+        top: 20%;
+    }
+
+    #title h1 {
+        font-size: 30px;
+    }
+
+    #start {
+        height: 200px;
+        width: 200px;
+        border: 40px solid black;
+        font-size: 20px;
+        line-height: 110px;
+        padding-left: 5px;
+        right: 10px;
+        bottom: 180px;
+    }
 }
-
-.ticket.ticket2 {
-    top: 5%;
-    left: -11%;
-}
-
-.ticket.ticket2:hover {
-    left: -5%;
-    top: 10%;
-}
-
-.ticket.ticket1 {
-    top: 15%;
-    left: -12%;
-}
-
-.ticket.ticket1:hover {
-    left: -5%;
-    top: 20%;
-}
-
-#title h1 {
-    font-size: 32px;
-}
-
-#start {
-    height: 200px;
-    width: 200px;
-    border: 40px solid black;
-    font-size: 20px;
-    line-height: 110px;
-    padding-left: 5px;
-    right: 10px;
-    bottom: 180px;
-}
-
-
 @media only screen
 and (min-device-width: 375px)
 and (max-device-width: 667px)
@@ -451,7 +453,13 @@ and (orientation: landscape) {
         font-size: 32px;
     }
 
-    #start {
+    #start{
+        height: 170px;
+        width: 170px;
+        border: 30px solid black;
+        font-size: 18px;
+        line-height: 100px;
+        padding-left: 5px;
         bottom: 10px;
     }
 }
@@ -513,5 +521,13 @@ and (orientation: landscape) {
     }
     #title_page {
         height: 100vh;
+    }
+    #start{
+        height: 170px;
+        width: 170px;
+        border: 30px solid black;
+        font-size: 18px;
+        line-height: 100px;
+        padding-left: 5px;
     }
 }

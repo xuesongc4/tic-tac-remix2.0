@@ -9,28 +9,56 @@
     <script src="js/app.js"></script>
 
     <link href="css/foundation.min.css" type="text/css" rel="stylesheet">
-    <link href="css/app.css" type="text/css" rel="stylesheet">
     <link href="css/title.css" type="text/css" rel="stylesheet">
+    <link href="css/app.css" type="text/css" rel="stylesheet">
 
 </head>
 <body>
-<div class="wrap container">
-    <div id="title_page">
-        <div class="row">
-            <div class="column small-8">
-                <div class="ticket ticket1">
-                    <input type="text" placeholder="Input DJ1 Name" class="input_name" id="player1_sn">
-                </div>
-                <div class="ticket ticket2">
-                    <input type="text" placeholder="Input DJ2 Name" class="input_name" id="player2_sn">
-                </div>
-                <div id="title"><h1>Tic-Tac-REMIX!</h1></div>
+
+<div id="title_page">
+    <div class="row">
+        <div class="column small-8">
+            <div class="ticket ticket1">
+                <input type="text" placeholder="Input DJ1 Name" class="input_name" id="player1_sn">
             </div>
-            <div class="column small-4">
-                <div class="board_size_select rookie">Rookie (3x3)</div>
-                <div class="board_size_select pro">Pro (9x9)</div>
-                <div class="board_size_select superstar">SuperStar (20x20)</div>
-                <div id="start">StartGame!</div>
+            <div class="ticket ticket2">
+                <input type="text" placeholder="Input DJ2 Name" class="input_name" id="player2_sn">
+            </div>
+            <div id="title"><h1>Tic-Tac-REMIX!</h1></div>
+        </div>
+        <div class="column small-4">
+            <div class="board_size_select rookie">Rookie (3x3)</div>
+            <div class="board_size_select pro">Pro (9x9)</div>
+            <div class="board_size_select superstar">SuperStar (20x20)</div>
+            <div id="start">StartGame!</div>
+        </div>
+    </div>
+</div>
+<div id="app_page">
+    <div class="row expanded">
+        <div class="column large-2 nopad">
+            <div class="console hide-small">&nbsp;
+                <div id="player1" class="console_info">DJ<br>player 1</div>
+                <h2 class="vs">VS.</h2>
+                <div id="player2" class="console_info">DJ<br>player 1</div>
+                <div id="win_condition" class="console_info">5 in a row to win</div>
+                <div class="reset">Restart Game</div>
+            </div>
+        </div>
+        <div class="column medium-12 large-10 nopad">
+            <div class="row expanded">
+                <div class="board_container"></div>
+            </div>
+            <div class="row expanded show">
+                <div class="console_horz">
+                    <span class="console_container">
+                        <div id="player1" class="console_info">DJ<br>player 1</div>
+                        <h2 class="vs">VS.</h2>
+                        <div id="player2" class="console_info">DJ<br>player 1</div>
+                        <div id="win_condition" class="console_info">5 in a row to win</div>
+                        <div class="reset">Restart Game</div>
+                    </span>
+                </div>
             </div>
         </div>
     </div>
