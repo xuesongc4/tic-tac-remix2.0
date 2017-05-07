@@ -199,7 +199,7 @@
     left: 40%;
     top: 7%;
     transform-style: preserve-3d;
-    transition-duration: 3s;
+    transition-duration: 2.3s;
 }
 
 .win_message{
@@ -207,7 +207,7 @@
     background-size: cover;
     border: 140px solid black;
     border-radius: 50%;
-    transition-duration:2s;
+    transition-duration:1.2s;
 }
 .message{
     width: 100%;
