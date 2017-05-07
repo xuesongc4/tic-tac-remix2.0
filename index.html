@@ -7,27 +7,33 @@
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/audioVisualizer.js"></script>
 
     <link href="css/foundation.min.css" type="text/css" rel="stylesheet">
     <link href="css/title.css" type="text/css" rel="stylesheet">
     <link href="css/app.css" type="text/css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
 
 </head>
 <body>
+
+<audio id="audio" class="music" src="music%20layers/audio_menu.wav" autoplay loop></audio>
+<audio id="fx1" class="clickFx" src="music%20layers/scratch.mp3"></audio>
+<audio id="fx2" class="loadFx" src="music%20layers/record-scratch-1.wav"></audio>
 
 <div id="title_page">
     <div class="row">
         <div class="column small-8">
             <div class="ticket ticket1">
-                <input type="text" placeholder="Input DJ1 Name" class="input_name" id="player1_sn">
+                <input maxlength="11" type="text" placeholder="Input DJ1 Name" class="input_name" id="player1_sn">
             </div>
             <div class="ticket ticket2">
-                <input type="text" placeholder="Input DJ2 Name" class="input_name" id="player2_sn">
+                <input maxlength="11" type="text" placeholder="Input DJ2 Name" class="input_name" id="player2_sn">
             </div>
             <div id="title"><h1>Tic-Tac-REMIX!</h1></div>
         </div>
         <div class="column small-4">
-            <div class="board_size_select rookie">Rookie (3x3)</div>
+            <div class="board_size_select rookie selected">Rookie (3x3)</div>
             <div class="board_size_select pro">Pro (9x9)</div>
             <div class="board_size_select superstar">SuperStar (20x20)</div>
             <div id="start">StartGame!</div>
@@ -38,78 +44,38 @@
     <div class="row expanded">
         <div class="column large-2 nopad">
             <div class="console hide-small">&nbsp;
-                <div id="player1" class="console_info">DJ<br>player 1</div>
+                <div class="player1 console_info current_turn">DJ<br>player 1</div>
                 <h2 class="vs">VS.</h2>
-                <div id="player2" class="console_info">DJ<br>player 1</div>
-                <div id="win_condition" class="console_info">5 in a row to win</div>
+                <div class="player2 console_info">DJ<br>player 1</div>
+                <div class="win_condition console_info">5 in a row to win</div>
                 <div class="reset">Restart Game</div>
             </div>
         </div>
         <div class="column medium-12 large-10 nopad">
             <div class="row expanded">
-                <div class="board_container"></div>
+                <div class="board_container">
+                </div>
+                <div class="win_message gameover">
+                    <div class="message">
+
+                        <div class="play_again">PLAY AGAIN!</div>
+                    </div>
+                </div>
             </div>
             <div class="row expanded show">
                 <div class="console_horz">
                     <span class="console_container">
-                        <div id="player1" class="console_info">DJ<br>player 1</div>
+                        <div class="player1 console_info current_turn"></div>
                         <h2 class="vs">VS.</h2>
-                        <div id="player2" class="console_info">DJ<br>player 1</div>
-                        <div id="win_condition" class="console_info">5 in a row to win</div>
-                        <div class="reset">Restart Game</div>
+                        <div class="player2 console_info"></div>
+                        <div class=" win_condition console_info"></div>
+                        <div class="reset console_info">Restart Game</div>
                     </span>
                 </div>
             </div>
         </div>
     </div>
+    <canvas id='canvas' width="750" height="400"></canvas>
 </div>
-
-<!--<div class="front_page" style="overflow: hidden">-->
-<!---->
-<!---->
-<!---->
-<!--<div class="button">StartGame!</div>-->
-<!--</div>-->
-<!--<div id="main_page" class="hidden">-->
-<!--<div id="side">-->
-<!--<div id="DJ1" class="sidebar_style"></div>-->
-<!--<h1>VS.</h1>-->
-<!--<div id="DJ2" class="sidebar_style"></div>-->
-<!--<div class="Player_turn sidebar_style">-->
-<!--</div>-->
-<!--<div id="toWin" class="sidebar_style">-->
-<!--</div>-->
-<!--<br><br>-->
-<!--<div id="resetGame" class="sidebar_style_reset" onclick="resetGame()">-->
-<!--Reset&nbspGame-->
-<!--</div>-->
-<!--</div>-->
-
-<!--<audio id="audio" class="music" src="music%20layers/audio_menu.wav" autoplay loop></audio>-->
-<!--&lt;!&ndash; <audio id="layer1" class="music" src="music%20layers/layer1.mp3" muted autoplay loop></audio>-->
-<!--<audio id="layer2" class="music" src="music%20layers/layer2.mp3" muted autoplay loop></audio>-->
-<!--<audio id="layer3" class="music" src="music%20layers/layer3.mp3" muted autoplay loop></audio>-->
-<!--<audio id="layer4" class="music" src="music%20layers/layer4.mp3" muted autoplay loop></audio>-->
-<!--<audio id="layer5" class="music" src="music%20layers/layer5.mp3" muted autoplay loop></audio>-->
-<!--<audio id="layer6" class="music" src="music%20layers/layer6.mp3" muted autoplay loop></audio>-->
-<!--<audio id="layer7" class="music" src="music%20layers/layer7.mp3" muted autoplay loop></audio> &ndash;&gt;-->
-<!--<audio id="fx1" class="clickFx" src="music%20layers/scratch.mp3"></audio>-->
-<!--<audio id="fx2" class="loadFx" src="music%20layers/record-scratch-1.wav"></audio>-->
-
-<!--<div id="main">-->
-<!--<div class="gameboard">-->
-<!--</div>-->
-<!--<div class="winner">-->
-<!--<span class="message">-->
-<!--You're a star!-->
-<!--</span><br><br>-->
-<!--<div class="reset" onclick="resetGame()">-->
-<!--play again-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<canvas id='canvas' width="750" height="1000"></canvas>-->
-<!--<div class="board_blocker"></div>-->
-<!--</div>-->
 </body>
 </html>

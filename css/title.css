@@ -12,7 +12,6 @@ body {
     position: relative;
     overflow: hidden;
     transition:transform 5s;
-    border: 10px solid black;
     box-shadow: 0 0 100px 20px black;
     z-index: 1;
 }
@@ -149,7 +148,6 @@ body {
 }
 
 .board_size_select:hover {
-    background-color: rgba(255, 255, 255, 1);
     animation: flash .5s infinite;
 }
 
@@ -187,6 +185,12 @@ body {
 #start:hover {
     transform: rotate(10800deg);
     transition: transform 20s;
+}
+
+.selected{
+    transform: rotate(-6deg) translateX(-100px);
+    box-shadow: 0 0 100px 20px white;
+    background-color: white;
 }
 
 @media only screen and (max-width: 1600px) {
@@ -338,6 +342,10 @@ body {
 }
 
 @media only screen and (max-width: 414px) {
+    .selected{
+        transform: rotate(-6deg) translateX(-30px);
+        box-shadow: 0 0 50px 10px white;
+    }
     .board_size_select {
         line-height: 30px;
         font-size: 16px;
@@ -531,3 +539,4 @@ and (orientation: landscape) {
         padding-left: 5px;
     }
 }
+

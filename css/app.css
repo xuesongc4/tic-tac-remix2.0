@@ -8,6 +8,15 @@
     left: 0;
     font-size: 30px;
     overflow: hidden;
+    perspective: 1000px;
+}
+
+#canvas{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 83%;
+    z-index: -1;
 }
 
 .nopad{
@@ -16,6 +25,80 @@
 .show{
     display: none;
 }
+
+.playerX{
+    height: 100%;
+    width: 100%;
+    background: url('../images/playerX.png')center center no-repeat;
+    background-size: cover;
+    animation: bounce2 2s infinite;
+}
+
+.playerO{
+    height: 100%;
+    width: 100%;
+    background: url('../images/playerO.png')center center no-repeat;
+    background-size: cover;
+    animation: bounce2 2s infinite;
+}
+
+@-webkit-keyframes bounce2 {
+    0%, 20%, 50%, 80%, 100% {  height: 90%;  width: 90%;}
+    40% { height: 95%;  width: 95%;}
+    60% { height: 97%;  width: 97%;}
+}
+.clicked{
+    pointer-events: none;
+}
+
+.gamesquare {
+    display: inline-block;
+    background-color: rgba(50, 50, 50, .5);
+    height: 100%;
+    cursor: pointer;
+    z-index: 1;
+}
+.gamesquare3{
+    width: 30%;
+    margin-left: 1%;
+}
+.row3{
+    height: 30%;
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+.gamesquare9{
+    width: 10.6%;
+    margin-left: .5%
+}
+.row9{
+    height: 10.6%;
+    margin-bottom: .5%;
+    text-align: center;
+}
+
+.gamesquare20{
+    width: 4.5%;
+    margin-left: .5%
+}
+.row20{
+    height: 4.5%;
+    margin-bottom: .5%;
+    text-align: center;
+}
+
+.gamesquare:hover {
+    animation: flashRed .5s infinite;
+    background-color: rgba(240,128,128, .5);
+    z-index: 100;
+}
+@-webkit-keyframes flashRed {
+    0% {  box-shadow: 0 0 50px 20px red;}
+    50% {  box-shadow: 0 0 10px 10px red;}
+    100% {  box-shadow: 0 0 50px 20px red;}
+}
+
 .console_horz{
     background: url("../images/controls_bg2.jpg") top center repeat;
     background-size: contain;
@@ -76,29 +159,76 @@
     font-size: 25px;
 }
 
-.reset:hover{
-    animation: flash .5s infinite;
+.play_again{
+    font-size: 20px;
+    line-height: 20px;
+    font-style: italic;
+    border: 4px solid white;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.3);
+    cursor: pointer;
+    transition-duration: .3s;
+    width: 75%;
+    margin:auto;
+}
+.play_again:hover{
+    border: 4px solid red;
+    color: red;
+    background-color: rgba(0,0,0,.85);
 }
 
-@-webkit-keyframes flash {
+.reset:hover{
+    animation: flash2 .5s infinite;
+}
+
+.current_turn{
+    animation: flash2 .5s infinite;
+    background-color: rgba(240,128,128, .5);
+}
+
+@-webkit-keyframes flash2 {
     0% {  box-shadow: 0 0 50px 20px red;}
     50% {  box-shadow: 0 0 10px 10px red;}
     100% {  box-shadow: 0 0 50px 20px red;}
 }
 
-.board_container{
-    height: 625px;
-    width: 625px;
+.board_container,.win_message{
+    height: 700px;
+    width: 700px;
     position: absolute;
-    right: 25%;
-    top: 10%;
-    border: 5px solid white;
+    left: 40%;
+    top: 7%;
+    transform-style: preserve-3d;
+    transition-duration: 3s;
 }
 
+.win_message{
+    background: url('../images/start_bg.jpg')center center no-repeat;
+    background-size: cover;
+    border: 140px solid black;
+    border-radius: 50%;
+    transition-duration:2s;
+}
+.message{
+    width: 100%;
+    height: 100%;
+    font-size: 50px;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    text-shadow: 3px 3px 15px black;
+    padding-top: 20%;
+    color: white;
+}
+
+.gameover{
+    transform: rotate(3600deg) translateY(300%);
+    pointer-events: none;
+}
 
 @media only screen and (max-width: 1200px) {
-    .board_container{
-        right: 15%;
+    .board_container,.win_message{
+        left: 30%;
     }
     .console_info {
         height: 100px;
@@ -113,14 +243,28 @@
 }
 
 @media only screen and (max-width: 1024px) {
+    #canvas{
+        bottom: 150px;
+        width: 100%;
+    }
+
     .hide-small{
         display: none;
     }
     .board_container{
         position: static;
-        margin: 20px auto 20px auto;
-        height: 40vh;
-        width: 40vh;
+        margin: 20px auto 0 auto;
+        height: 50vh;
+        width: 50vh;
+    }
+    .win_message{
+        height: 450px;
+        width: 450px;
+        border-width: 100px;
+    }
+    .message{
+        font-size: 30px;
+        padding-top: 30%;
     }
     .show{
         display: block;
@@ -146,29 +290,48 @@
         font-size: 12px;
         border-width: 3px;
     }
-    @-webkit-keyframes flash {
+    @-webkit-keyframes flash2 {
         0% {  box-shadow: 0 0 25px 10px red;}
         50% {  box-shadow: 0 0 5px 5px red;}
         100% {  box-shadow: 0 0 25px 10px red;}
     }
 }
 
-@media only screen and (max-width: 726px) {
+@media only screen and (max-width: 736px) {
+    #canvas{
+        bottom: 130px;
+    }
+
+
     .console_info {
         height: 60px;
-        width: 70px;
+        width: 73px;
         font-size: 12px;
     }
     .console_horz{
         height: 130px;
     }
     .reset{
-        width: 70px;
-        line-height: 70px;
+        width: 60px;
+        line-height: 60px;
         font-size: 8px;
     }
     .console_horz .console_info, .console_horz .vs, .console_horz .reset{
         margin: 2px;
         margin-top: 5px;
     }
+    .play_again{
+        font-size: 14px;
+        border-width: 2px;
+    }
+    .win_message{
+        left: 13%;
+        height: 300px;
+        width: 300px;
+        border-width: 70px;
+    }
+    .message{
+        font-size: 18px;
+    }
 }
+
