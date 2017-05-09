@@ -214,6 +214,7 @@ body {
         width: 300px;
         border-radius: 60px;
         border: 4px red solid;
+        cursor: pointer;
     }
 
     .board_size_select.rookie {
