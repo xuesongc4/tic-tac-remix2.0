@@ -109,21 +109,21 @@ function size_select() {
     var pro = $(".pro");
     var superstar = $(".superstar");
 
-    rookie.click(function () {
+    rookie.on("click",function () {
         audioClick();
         gameSize = 3;
         board_size_select.removeClass("selected");
         rookie.addClass("selected");
     });
 
-    pro.click(function () {
+    pro.on("click",function () {
         audioClick();
         gameSize = 9;
         board_size_select.removeClass("selected");
         pro.addClass("selected");
     });
 
-    superstar.click(function () {
+    superstar.on("click",function () {
         audioClick();
         gameSize = 20;
         board_size_select.removeClass("selected");
