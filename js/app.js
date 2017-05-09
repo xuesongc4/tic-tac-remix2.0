@@ -80,7 +80,7 @@ function place_piece() {
 }
 
 function start_game() {
-    $('#start').click(function () {
+    $('#start').on('click',function () {
         var title = $('#title_page');
         loadSquares();
         player_sn_assign();
