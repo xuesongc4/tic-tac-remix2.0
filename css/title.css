@@ -219,16 +219,19 @@ body {
     .board_size_select.rookie {
         right: 225px;
         top: 50px;
+        cursor:pointer;
     }
 
     .board_size_select.pro {
         right: 150px;
         top: 150px;
+        cursor:pointer;
     }
 
     .board_size_select.superstar {
         right: 75px;
         top: 250px;
+        cursor:pointer;
     }
 
     .ticket {

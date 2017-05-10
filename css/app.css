@@ -157,6 +157,7 @@
     border: 5px solid white;
     cursor: pointer;
     font-size: 25px;
+    cursor:pointer;
 }
 
 .play_again{
