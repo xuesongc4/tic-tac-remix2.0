@@ -238,7 +238,7 @@ function checkVertical(i, j, numberOfSpots, XorO) {
             break;
         }
     }
-    return count === numberOfSpots;
+    return count >= numberOfSpots;
 }
 
 function checkUpperDiagonal(i, j, numberOfSpots, XorO) {
@@ -261,7 +261,7 @@ function checkUpperDiagonal(i, j, numberOfSpots, XorO) {
             break;
         }
     }
-    return count === numberOfSpots;
+    return count >= numberOfSpots;
 }
 
 function checkHorizontal(i, j, numberOfSpots, XorO) {
@@ -284,7 +284,7 @@ function checkHorizontal(i, j, numberOfSpots, XorO) {
             break;
         }
     }
-    return count === numberOfSpots;
+    return count >= numberOfSpots;
 }
 
 function checkLowerDiagonal(i, j, numberOfSpots, XorO) {
@@ -308,6 +308,6 @@ function checkLowerDiagonal(i, j, numberOfSpots, XorO) {
             break;
         }
     }
-    return count === numberOfSpots;
+    return count >= numberOfSpots;
 }
 
